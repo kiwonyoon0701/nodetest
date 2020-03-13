@@ -1,16 +1,12 @@
 var fs = require('fs');
 
-// sync
-console.log(1);
-var data = fs.readFileSync('data.txt'), {encoding:'utf8'});
-console.log(data);
-
-// async
-console.log(2);
-fs.readFile('data.txt', {encoding:'utf8'},function(err,data){
-    console.log(3);
+fs.readFile('./data.txt', 'utf8', function(err,data){
     console.log(data);
-    console.log(5);
 });
 
-console.log(4);
+// console.log('hellow js');
+function myFunc(arg) {
+    console.log(`arg was => ${arg}`);
+}
+
+setTimeout(myFunc,1000,'funcy');
